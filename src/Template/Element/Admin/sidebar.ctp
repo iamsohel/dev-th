@@ -5,7 +5,7 @@
         <ul class="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             <li <?php if($this->name=='Dashboard'){ ?> class="nav-item active" <?php }?>>
                 <a href="/admin/dashboard" class="nav-link nav-toggle">
-                    <i class="icon-home"></i>
+                    <i class="fa fa-home"></i>
                     <span class="title">Dashboard</span>
                     <span class="selected"></span>
                 </a>
