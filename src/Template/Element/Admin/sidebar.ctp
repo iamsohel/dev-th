@@ -13,20 +13,41 @@
             <li <?php if($this->name=='Users'){ ?> class="nav-item active" <?php }?>>
                 <a href="/admin/users" class="nav-link nav-toggle">
                     <i class="fa fa-users"></i>
-                    <span class="title">Users</span>
+                    <span class="title">Members</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="/admin/users/index" class="nav-link ">
                             <i class="fa fa-user"></i>
-                            <span class="title">All Users</span>
+                            <span class="title">All Members</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="/admin/users/add" class="nav-link ">
                             <i class="fa fa-plus"></i>
-                            <span class="title">Add User</span>
+                            <span class="title">Add New Members</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li <?php if($this->name=='Pages'){ ?> class="nav-item active" <?php }?>>
+                <a href="/admin/pages" class="nav-link nav-toggle">
+                    <i class="fa fa-file"></i>
+                    <span class="title">Pages</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="/admin/pages/home" class="nav-link ">
+                            <i class="fa fa-h-square"></i>
+                            <span class="title">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/users/add" class="nav-link ">
+                            <i class="fa fa-address-card"></i>
+                            <span class="title">About</span>
                         </a>
                     </li>
                 </ul>

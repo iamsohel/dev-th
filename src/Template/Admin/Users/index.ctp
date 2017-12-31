@@ -78,9 +78,9 @@
             <td class="text-center"> <?php echo $user['address'];?></td>
             <td class="text-center"> <?php echo $user['status'];?></td>
             <td class="text-center">
-                <button class="btn btn-outline  blue-sharp btn-circle btn-sm">View</button> 
-                <button class="btn btn-outline  purple-sharp btn-circle btn-sm">Edit</button>
-                <button class="btn red-haze btn-outline btn-circle btn-sm">Delete</button>
+                <a href="/admin/users/view" class="btn btn-outline btn-circle btn-xs purple">View</a> 
+                <a href="/admin/users/edit" class="btn btn-outline btn-circle btn-xs blue">Edit</a>
+                <a href="/admin/users/delete" class="btn btn-outline btn-circle btn-xs red">Delete</a>
             </td>
         </tr>
     <?php }?>

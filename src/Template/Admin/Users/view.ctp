@@ -17,7 +17,7 @@
             <div class="portlet light profile-sidebar-portlet bordered">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="/assets/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> </div>
+                    <img src="/img/profile_user.jpg" class="img-responsive" alt=""> </div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
@@ -25,18 +25,12 @@
                     <div class="profile-usertitle-job"> Developer </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
-                <!-- SIDEBAR BUTTONS -->
-                <div class="profile-userbuttons">
-                    <button type="button" class="btn btn-circle green btn-sm">Follow</button>
-                    <button type="button" class="btn btn-circle red btn-sm">Message</button>
-                </div>
-                <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
                         <li class="active">
                             <a href="page_user_profile_1_account.html">
-                                <i class="icon-settings"></i> Account Settings </a>
+                                <i class="fa fa-cog"></i> Account Settings </a>
                         </li>
                     </ul>
                 </div>
@@ -77,10 +71,10 @@
                             </div>
                             <ul class="nav nav-tabs">
                                 <li class="active">
-                                    <a href="#tab_1_1" data-toggle="tab">Personal Info</a>
+                                    <a href="#tab_1_2" data-toggle="tab">Personal Info</a>
                                 </li>
                                 <li>
-                                    <a href="#tab_1_2" data-toggle="tab">Update Info</a>
+                                    <a href="#tab_1_1" data-toggle="tab">Update Info</a>
                                 </li>
                                  <li>
                                     <a href="#tab_1_3" data-toggle="tab">Change Avatar</a>
@@ -93,7 +87,7 @@
                         <div class="portlet-body">
                             <div class="tab-content">
                                 <!-- PERSONAL INFO TAB -->
-                                <div class="tab-pane active" id="tab_1_1">
+                                <div class="tab-pane" id="tab_1_1">
                                     <form role="form" action="#">
                                         <div class="form-group">
                                             <label class="control-label">First Name</label>
@@ -125,33 +119,80 @@
                                 </div>
                                 <!-- END PERSONAL INFO TAB -->
                                 <!-- CHANGE AVATAR TAB -->
-                                <div class="tab-pane" id="tab_1_2">
-                                    <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                        eiusmod. </p>
-                                    <form action="#" role="form">
-                                        <div class="form-group">
-                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
-                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
-                                                <div>
-                                                    <span class="btn default btn-file">
-                                                        <span class="fileinput-new"> Select image </span>
-                                                        <span class="fileinput-exists"> Change </span>
-                                                        <input type="file" name="..."> </span>
-                                                    <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
-                                                </div>
-                                            </div>
-                                            <div class="clearfix margin-top-10">
-                                                <span class="label label-danger">NOTE! </span>
-                                                <span>Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
+                                <div class="tab-pane active" id="tab_1_2">
+                                    <div class="portlet light">
+                                        <div class="portlet-body">
+                                             <div class="table-scrollable table-scrollable-borderless">
+                                                <table class="table table-hover table-light">
+
+                                                     <tbody><tr>
+                                                        <td>
+                                                       <strong>Name</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>Admin </strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>
+                                                       <strong>Email</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>seller@leapinglogic.com</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>
+                                                       <strong>Phone</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>1934875727 </strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>
+                                                       <strong>Address</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>mirpur</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>
+                                                       <strong>City</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>Dhaka</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>
+                                                       <strong>State</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>Rajbari</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>
+                                                       <strong>ZipCode</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>12123</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>
+                                                       <strong>User Type</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>Seller                                        </strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody></table>
                                             </div>
                                         </div>
-                                        <div class="margin-top-10">
-                                            <a href="javascript:;" class="btn green"> Submit </a>
-                                            <a href="javascript:;" class="btn default"> Cancel </a>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
                                 <!-- END CHANGE AVATAR TAB -->
                                 <!-- CHANGE PASSWORD TAB -->

@@ -60,7 +60,7 @@
                             <input type="text" class="form-control input-sm" placeholder="Search." name="query">
                             <span class="input-group-btn">
                                 <a href="javascript:;" class="btn submit">
-                                    <i class="icon-magnifier"></i>
+                                    <i class="fa fa-search"></i>
                                 </a>
                             </span>
                         </div>
@@ -79,19 +79,15 @@
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <span class="username username-hide-on-mobile"> Nick </span>
                                     <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                                    <img alt="" class="img-circle" src="/assets/layouts/layout4/img/avatar9.jpg" /> </a>
+                                    <img alt="" class="img-circle" src="/img/avatar9.jpg" /> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
                                         <a href="page_user_profile_1.html">
-                                            <i class="icon-user"></i> My Profile </a>
-                                    </li>
-                                    <li>
-                                        <a href="page_user_lock_1.html">
-                                            <i class="icon-lock"></i> Lock Screen </a>
+                                            <i class="fa fa-user"></i> My Profile </a>
                                     </li>
                                     <li>
                                         <a href="/admin/users/logout">
-                                            <i class="icon-key"></i> Log Out </a>
+                                            <i class="fa fa-key"></i> Log Out </a>
                                     </li>
                                 </ul>
                             </li>
