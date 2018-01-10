@@ -17,6 +17,12 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    <li class="nav-item">
+                        <a href="/admin/users/committee" class="nav-link ">
+                            <i class="fa fa-users"></i>
+                            <span class="title">Committee</span>
+                        </a>
+                    </li>
                     <li class="nav-item  ">
                         <a href="/admin/users/index" class="nav-link ">
                             <i class="fa fa-user"></i>
@@ -48,6 +54,26 @@
                         <a href="/admin/users/add" class="nav-link ">
                             <i class="fa fa-address-card"></i>
                             <span class="title">About</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li <?php if($this->name=='Media'){ ?> class="nav-item active" <?php }?>>
+                <a href="/admin/media" class="nav-link nav-toggle">
+                    <i class="fa fa-video-camera"></i>
+                    <span class="title">Media & Gallery</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item">
+                        <a href="/admin/media/images" class="nav-link ">
+                            <i class="fa fa-picture-o"></i>
+                            <span class="title">Images</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="/admin/media/videso" class="nav-link ">
+                            <i class="fa fa-video-camera"></i>
+                            <span class="title">Videos</span>
                         </a>
                     </li>
                 </ul>

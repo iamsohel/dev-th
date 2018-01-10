@@ -56,7 +56,7 @@ class UsersController extends AppController
             $conditions = array_merge(array("Users.name LIKE '%" . $options['name'] . "%'"), $conditions);
         }
         if (!empty($options['email'])) {
-            $conditions = array_merge(array("Users.email LIKE '%" . $options['name'] . "%'"), $conditions);
+            $conditions = array_merge(array("Users.email LIKE '%" . $options['email'] . "%'"), $conditions);
         }
         if (!empty($options['status'])) {
             $options['status'] = ($options['status'] == 2) ? 0 : 1;
@@ -68,7 +68,8 @@ class UsersController extends AppController
             'order' => [
                 'Users.name' => 'asc'
             ],
-            'conditions' => $conditions
+            'conditions' => $conditions,
+            'contain'=>'Categories'
         ];
         $users = $this->paginate('Users')->toArray();
         $this->set('search', $search);
@@ -127,28 +128,6 @@ class UsersController extends AppController
     /**
      * change user profile image
      * @param type $user_id
-     */
-    public function changeAvatar() {
-        $id = $this->Auth->user('id');
-        $this->add_model(array('Users'));
-        if (!empty($this->request->data)) {
-            $image = $this->uploadImage('profile');
-            if (!empty($image)) {
-                $user = $this->User->get($id);
-                if (!empty($user['image'])) {
-                    unlink(getcwd() . DS . 'img' . DS . 'profile' . DS . $user['image']);
-                }
-                $user = $this->User->patchEntity($user, array('image' => $image));
-                if ($this->User->save($user)) {
-                    $options = array('content_id' => $this->Auth->user('id'), 'user_id' => $this->Auth->user('id'), 'type' => 'user', 'action' => 'change_avatar');
-                    $this->addNotification($options);
-                    $this->Flash->success(__('Profile image updated successfully.'));
-                }
-            }
-        }
-        $user = $this->User->get($id);
-        $this->set('user', $user);
-    }
 
     /** User Forgot Password & send email to change password */
     public function forgotPassword() {
@@ -192,28 +171,23 @@ class UsersController extends AppController
      * Change User password
      * @param type $id
      */
-    public function password() {
+    public function changePassword() {
         $id = $this->Auth->user('id');
-        $this->add_model(array('User'));
+        $this->add_model(array('Users','Bloods','Categories'));
         if (!empty($this->request->data)) {
-            if (!empty($this->request->data['password'])) {
-                $user = $this->User->get($id);
-                $data['password'] = (new DefaultPasswordHasher)->hash($this->request->data['password']);
-                // if ($user['password'] != $data['password']) {
-                //     $this->Flash->aerror('Invalid Current Password');
-                //  } else {
+            if (!empty($this->request->data['npassword'])) {
+                $user = $this->Users->get($id);
                 $data['password'] = (new \Cake\Auth\DefaultPasswordHasher)->hash($this->request->data['npassword']);
-                $user = $this->User->patchEntity($user, $data);
-                if ($this->User->save($user)) {
-                    $options = array('content_id' => $this->Auth->user('id'), 'user_id' => $this->Auth->user('id'), 'type' => 'user', 'action' => 'change_password');
-                    $this->addNotification($options);
+                $user = $this->Users->patchEntity($user, $data);
+                if ($this->Users->save($user)) {
                     $this->Flash->success(__('Password Changed successfully.'));
                 }
-                //   }
             }
         }
-        $user = $this->User->get($id);
-        $this->set('user', $user);
+        $user = $this->Users->get($id);
+        $bloods = $this->Bloods->find('list')->toArray();
+        $categories = $this->Categories->find('list')->where(['type'=>'Member'])->toArray();
+        $this->set(compact('user','bloods','categories'));
     }
 
     /**
@@ -284,18 +258,25 @@ class UsersController extends AppController
             }
         }
     }
-    public function view(){
-        $this->viewBuilder()->layout('admin');
-        $users = $this->Users->find('all')->toArray();
-        $this->set(compact('users'));
+    public function view($id){
+        //$this->viewBuilder()->layout('admin');
+        $this->add_model(array('Users','Bloods','Categories'));
+        if(!empty($id)){
+            $user = $this->Users->find('all')->where(['Users.id'=> $id])->contain(['Bloods','Categories'])->first();
+        }
+        $bloods = $this->Bloods->find('list')->toArray();
+        $categories = $this->Categories->find('list')->where(['type'=>'Member'])->toArray();
+        $this->set(compact('user','bloods','categories'));
     }
     //add new user
     public function add(){
-        $this->add_model(array('Users'));
+        $this->add_model(array('Users','Bloods','Categories'));
         if (!empty($this->request->data)){
             $data = $this->request->data;
-            $check_email = $this->Users->find()->where(['email'=>$data['email']])->first();
-            if(empty( $check_email)){
+            $data['image'] = $this->uploadImage('profile');
+            $data['activation_key'] = md5($this->randomnum(8));
+            $check_duplicate = $this->Users->find()->where(['email'=>$data['email']])->orWhere(['member_id'=>$data['member_id']])->first();
+            if(empty($check_duplicate)){
                 $user = $this->Users->newEntity();
                 $user = $this->Users->patchEntity($user, $data);
                 //pr($user);exit();
@@ -307,10 +288,113 @@ class UsersController extends AppController
                     $this->redirect('/admin/users');
                 }
             }else{
-                $this->Flash->error(__('This email is already exists.'));
+                $this->Flash->error(__('This email or member id is already exists.Please enter unique email and member id.'));
                 $this->redirect('/admin/users/add');
             }
         }
+        $bloods = $this->Bloods->find('list')->toArray();
+        $categories = $this->Categories->find('list')->where(['type'=>'Member'])->toArray();
+        $this->set(compact('bloods','categories'));
     }
+
+    //edit user
+    public function edit($id){
+        $this->add_model(array('Users','Bloods','Categories'));
+        $user = $this->Users->get($id);
+        if (!empty($this->request->data)){
+            $data = $this->request->data;
+            $user = $this->Users->patchEntity($user, $data);
+            if($this->Users->save($user)){
+                $this->Flash->success(__('The User has been successfully updated.'));
+                $this->redirect('/admin/users/view/'.$user['id']);
+            } else{
+                $this->Flash->error(__('Users could not be updated. Please try again.'));
+                $this->redirect('/admin/users/view/'.$user['id']);
+            }
+        }
+        $bloods = $this->Bloods->find('list')->toArray();
+        $categories = $this->Categories->find('list')->where(['type'=>'Member'])->toArray();
+        $this->set(compact('bloods','categories','user'));
+    }
+
+    //upload QR code
+    public function uploadQr($id){
+        $this->add_model(array('Users','Bloods','Categories'));
+        $user = $this->Users->get($id);
+        if (!empty($this->request->data)){
+            $image = $this->uploadImage('qr');
+                if (!empty($image)) {
+                    if (!empty($user['qr_code'])) {
+                        unlink(getcwd() . DS . 'img' . DS . 'qr' . DS . $user['qr_code']);
+                    }
+                $user = $this->Users->patchEntity($user, array('qr_code' => $image));
+                if($this->Users->save($user)){
+                    $this->Flash->success(__('The QR Code has been successfully uploaded.'));
+                    $this->redirect('/admin/users/view/'.$user['id']);
+                } else{
+                    $this->Flash->error(__('The QR Code could not be updated. Please try again.'));
+                    $this->redirect('/admin/users/view/'.$user['id']);
+                }
+            }
+        }
+        $bloods = $this->Bloods->find('list')->toArray();
+        $categories = $this->Categories->find('list')->where(['type'=>'Member'])->toArray();
+        $this->set(compact('bloods','categories','user'));
+    }
+
+    //upload ID Card
+    public function uploadId($id){
+        $this->add_model(array('Users','Bloods','Categories'));
+        $user = $this->Users->get($id);
+        if (!empty($this->request->data)){
+            $image = $this->uploadImage('id_card');
+                if (!empty($image)) {
+                    if (!empty($user['id_card'])) {
+                        unlink(getcwd() . DS . 'img' . DS . 'id_card' . DS . $user['id_card']);
+                    }
+                $user = $this->Users->patchEntity($user, array('id_card' => $image));
+                if($this->Users->save($user)){
+                    $this->Flash->success(__('The Id Card has been successfully uploaded.'));
+                    $this->redirect('/admin/users/view/'.$user['id']);
+                } else{
+                    $this->Flash->error(__('The Id Card Code could not be updated. Please try again.'));
+                    $this->redirect('/admin/users/view/'.$user['id']);
+                }
+            }
+        }
+        $bloods = $this->Bloods->find('list')->toArray();
+        $categories = $this->Categories->find('list')->where(['type'=>'Member'])->toArray();
+        $this->set(compact('bloods','categories','user'));
+    }
+
+    //Change Avatar
+    public function changeAvatar($id){
+        $this->add_model(array('Users','Bloods','Categories'));
+        $user = $this->Users->get($id);
+        if (!empty($this->request->data)){
+            $image = $this->uploadImage('profile');
+                if (!empty($image)) {
+                    if (!empty($user['image'])) {
+                        unlink(getcwd() . DS . 'img' . DS . 'profile' . DS . $user['image']);
+                    }
+                $user = $this->Users->patchEntity($user, array('image' => $image));
+                if($this->Users->save($user)){
+                    $this->Flash->success(__('The profile image has been successfully uploaded.'));
+                    $this->redirect('/admin/users/view/'.$user['id']);
+                } else{
+                    $this->Flash->error(__('The profile image could not be updated. Please try again.'));
+                    $this->redirect('/admin/users/view/'.$user['id']);
+                }
+            }
+        }
+        $bloods = $this->Bloods->find('list')->toArray();
+        $categories = $this->Categories->find('list')->where(['type'=>'Member'])->toArray();
+        $this->set(compact('bloods','categories','user'));
+    }
+
+    public function committee(){
+        $this->add_model(array('Users'));
+    }
+
 }
   

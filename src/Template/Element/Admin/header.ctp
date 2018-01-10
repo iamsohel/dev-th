@@ -5,7 +5,7 @@
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
                     <a href="index.html">
-                        <img src="/img/logo-light.png" alt="logo" class="logo-default" /> </a>
+                        <img src="/img/softpro.png" alt="logo" class="logo-default" /> </a>
                     <div class="menu-toggler sidebar-toggler">
                         <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
                     </div>
@@ -30,23 +30,6 @@
                                 <a href="javascript:;">
                                     <i class="icon-tag"></i> New Comment </a>
                             </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-share"></i> Share </a>
-                            </li>
-                            <li class="divider"> </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-flag"></i> Comments
-                                    <span class="badge badge-success">4</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-users"></i> Feedbacks
-                                    <span class="badge badge-danger">2</span>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -55,16 +38,6 @@
                 <div class="page-top">
                     <!-- BEGIN HEADER SEARCH BOX -->
                     <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-                    <form class="search-form" action="page_general_search_2.html" method="GET">
-                        <div class="input-group">
-                            <input type="text" class="form-control input-sm" placeholder="Search." name="query">
-                            <span class="input-group-btn">
-                                <a href="javascript:;" class="btn submit">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </form>
                     <!-- END HEADER SEARCH BOX -->
                     <!-- BEGIN TOP NAVIGATION MENU -->
                     <div class="top-menu">
@@ -77,12 +50,12 @@
                             <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                             <li class="dropdown dropdown-user dropdown-dark">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                    <span class="username username-hide-on-mobile"> Nick </span>
+                                    <span class="username username-hide-on-mobile"> <?php echo $session['Auth']['User']['name'];?> </span>
                                     <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                                    <img alt="" class="img-circle" src="/img/avatar9.jpg" /> </a>
+                                    <img alt="" class="img-circle" src="/img/profile/<?php echo $session['Auth']['User']['image'];?>" /> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
-                                        <a href="page_user_profile_1.html">
+                                        <a href="/admin/users/view/<?php echo $session['Auth']['User']['id'];?>">
                                             <i class="fa fa-user"></i> My Profile </a>
                                     </li>
                                     <li>

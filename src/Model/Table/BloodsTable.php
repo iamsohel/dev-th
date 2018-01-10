@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Users Model
  *
  */
-class UsersTable extends Table
+class BloodsTable extends Table
 {
 
     /**
@@ -23,11 +23,9 @@ class UsersTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('users');
+        $this->setTable('blood');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
         $this->addBehavior('Timestamp');
-        $this->belongsTo('Bloods', ['foreignKey' => 'blood_id']);
-        $this->belongsTo('Categories', ['foreignKey' => 'member_category']);
     }  
 }

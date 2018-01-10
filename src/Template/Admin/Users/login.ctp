@@ -30,20 +30,6 @@
                     ]);
                 ?>
         </div>
-        <div class="row m-login__form-sub">
-            <div class="col m--align-left m-login__form-left">
-                <label class="m-checkbox  m-checkbox--light">
-                    <input type="checkbox" name="remember">
-                    Remember me
-                    <span></span>
-                </label>
-            </div>
-            <div class="col m--align-right m-login__form-right">
-                <a href="#" id="m_login_forget_password" class="m-link">
-                    Forget Password ?
-                </a>
-            </div>
-        </div>
         <div class="m-login__form-action">
             <button type="submit" id="m_login_signin" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn" name="login" value="login">
                 Sign In

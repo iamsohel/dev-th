@@ -1,4 +1,4 @@
-<div class="main_page_content" id="admin_users_add">
+<div class="main_page_content" id="admin_users_profile">
 <ul class="page-breadcrumb breadcrumb">
     <li>
         <a href="/admin/dashboard">Home</a>
@@ -9,55 +9,10 @@
     </li>
 </ul>
 <?php echo $this->Flash->render() ?>
-<div class="row">
+ <div class="row">
     <div class="col-md-12">
         <!-- BEGIN PROFILE SIDEBAR -->
-        <div class="profile-sidebar">
-            <!-- PORTLET MAIN -->
-            <div class="portlet light profile-sidebar-portlet bordered">
-                <!-- SIDEBAR USERPIC -->
-                <div class="profile-userpic">
-                    <img src="/img/profile_user.jpg" class="img-responsive" alt=""> </div>
-                <!-- END SIDEBAR USERPIC -->
-                <!-- SIDEBAR USER TITLE -->
-                <div class="profile-usertitle">
-                    <div class="profile-usertitle-name"> Marcus Doe </div>
-                    <div class="profile-usertitle-job"> Developer </div>
-                </div>
-                <!-- END SIDEBAR USER TITLE -->
-                <!-- SIDEBAR MENU -->
-                <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="page_user_profile_1_account.html">
-                                <i class="fa fa-cog"></i> Account Settings </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END MENU -->
-            </div>
-            <!-- END PORTLET MAIN -->
-            <!-- PORTLET MAIN -->
-            <div class="portlet light bordered">
-                <div>
-                    <h4 class="profile-desc-title">About Marcus Doe</h4>
-                    <span class="profile-desc-text"> Lorem ipsum dolor sit amet diam nonummy nibh dolore. </span>
-                    <div class="margin-top-20 profile-desc-link">
-                        <i class="fa fa-globe"></i>
-                        <a href="http://www.keenthemes.com">www.keenthemes.com</a>
-                    </div>
-                    <div class="margin-top-20 profile-desc-link">
-                        <i class="fa fa-twitter"></i>
-                        <a href="http://www.twitter.com/keenthemes/">@keenthemes</a>
-                    </div>
-                    <div class="margin-top-20 profile-desc-link">
-                        <i class="fa fa-facebook"></i>
-                        <a href="http://www.facebook.com/keenthemes/">keenthemes</a>
-                    </div>
-                </div>
-            </div>
-            <!-- END PORTLET MAIN -->
-        </div>
+        <?php echo $this->element('Admin/profile_sidebar'); ?>
         <!-- END BEGIN PROFILE SIDEBAR -->
         <!-- BEGIN PROFILE CONTENT -->
         <div class="profile-content">
@@ -77,10 +32,13 @@
                                     <a href="#tab_1_1" data-toggle="tab">Update Info</a>
                                 </li>
                                  <li>
-                                    <a href="#tab_1_3" data-toggle="tab">Change Avatar</a>
+                                    <a href="#tab_1_4" data-toggle="tab">Change Avatar</a>
                                 </li>
                                 <li>
-                                    <a href="#tab_1_4" data-toggle="tab">Change Password</a>
+                                    <a href="#tab_1_3" data-toggle="tab">Upload QR Code</a>
+                                </li>
+                                <li>
+                                    <a href="#tab_1_5" data-toggle="tab">Upload ID Card</a>
                                 </li>
                             </ul>
                         </div>
@@ -88,34 +46,73 @@
                             <div class="tab-content">
                                 <!-- PERSONAL INFO TAB -->
                                 <div class="tab-pane" id="tab_1_1">
-                                    <form role="form" action="#">
-                                        <div class="form-group">
-                                            <label class="control-label">First Name</label>
-                                            <input type="text" placeholder="John" class="form-control" /> </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Last Name</label>
-                                            <input type="text" placeholder="Doe" class="form-control" /> </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Mobile Number</label>
-                                            <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Interests</label>
-                                            <input type="text" placeholder="Design, Web etc." class="form-control" /> </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Occupation</label>
-                                            <input type="text" placeholder="Web Developer" class="form-control" /> </div>
-                                        <div class="form-group">
-                                            <label class="control-label">About</label>
-                                            <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
+                                    <?php echo $this->Form->create($user, array('id'=>'edit-form','url'=>'/admin/users/edit/'.$user['id'])); ?>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Member Id *</label>
+                                                 <?php echo $this->Form->input('member_id',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Member Id')); ?> 
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Website Url</label>
-                                            <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
-                                        <div class="margiv-top-10">
-                                            <a href="javascript:;" class="btn green"> Save Changes </a>
-                                            <a href="javascript:;" class="btn default"> Cancel </a>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Name *</label>
+                                                 <?php echo $this->Form->input('name',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Name')); ?> 
+                                            </div>
                                         </div>
-                                    </form>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Profession </label>
+                                                <?php echo $this->Form->input('profession',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Profession')); ?> 
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="row">
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Email *</label>
+                                                <?php echo $this->Form->input('email',array('type' => 'email', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Email')); ?> 
+                                            </div>
+                                        </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Phone</label>
+                                                <?php echo $this->Form->input('phone',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Phone')); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Address</label>
+                                                <?php echo $this->Form->input('address',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Address')); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">NID *</label>
+                                                <?php echo $this->Form->input('nid',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'NID')); ?> 
+                                            </div>
+                                        </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Blood Group</label>
+                                                <?php echo $this->Form->input('blood_id',array('options' => $bloods, 'label' => false,'div'=>'false','class' => 'form-control','empty'=>'-Select Blood Group-')); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Member Category</label>
+                                                <?php echo $this->Form->input('member_category',array('options' => $categories, 'label' => false,'div'=>'false','class' => 'form-control','empty'=>'-Select Category-')); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="margiv-top-10">
+                                        <button class="btn green"> Save Changes </button>
+                                        <a href="/admin/users" class="btn default"> Cancel </a>
+                                    </div>
+                                <?php echo $this->Form->end(); ?>
                                 </div>
                                 <!-- END PERSONAL INFO TAB -->
                                 <!-- CHANGE AVATAR TAB -->
@@ -125,12 +122,37 @@
                                              <div class="table-scrollable table-scrollable-borderless">
                                                 <table class="table table-hover table-light">
 
-                                                     <tbody><tr>
+                                                     <tbody>
+                                                    <tr>
+                                                        <td>
+                                                       <strong>Member Id</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong><?php echo $user['member_id'];?></strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>
+                                                       <strong>Member Category</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong><?php echo $user['category']['name'];?></strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>
                                                        <strong>Name</strong>
                                                         </td>
                                                         <td></td>
-                                                        <td> <strong>Admin </strong></td>
+                                                        <td> <strong><?php echo $user['name'];?> </strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                       <strong>Profession</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong><?php echo $user['profession'];?></strong></td>
                                                         <td></td>
                                                     </tr>
                                                      <tr>
@@ -138,15 +160,7 @@
                                                        <strong>Email</strong>
                                                         </td>
                                                         <td></td>
-                                                        <td> <strong>seller@leapinglogic.com</strong></td>
-                                                        <td></td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>
-                                                       <strong>Phone</strong>
-                                                        </td>
-                                                        <td></td>
-                                                        <td> <strong>1934875727 </strong></td>
+                                                        <td> <strong><?php echo $user['email'];?></strong></td>
                                                         <td></td>
                                                     </tr>
                                                      <tr>
@@ -154,39 +168,47 @@
                                                        <strong>Address</strong>
                                                         </td>
                                                         <td></td>
-                                                        <td> <strong>mirpur</strong></td>
+                                                        <td> <strong><?php echo $user['address'];?></strong></td>
                                                         <td></td>
                                                     </tr>
                                                      <tr>
                                                         <td>
-                                                       <strong>City</strong>
+                                                       <strong>Phone</strong>
                                                         </td>
                                                         <td></td>
-                                                        <td> <strong>Dhaka</strong></td>
+                                                        <td> <strong><?php echo $user['phone'];?></strong></td>
                                                         <td></td>
                                                     </tr>
                                                      <tr>
                                                         <td>
-                                                       <strong>State</strong>
+                                                       <strong>NID</strong>
                                                         </td>
                                                         <td></td>
-                                                        <td> <strong>Rajbari</strong></td>
+                                                        <td> <strong><?php echo $user['nid'];?></strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                       <strong>Blood Group</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong><?php echo $user['blood']['name'];?></strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                       <strong>QR Code</strong>
+                                                        </td>
+                                                        <td></td>
+                                                        <td> <strong>  <img src="/img/qr/<?php echo $user['qr_code'];?>" class="img-responsive" alt="" style="height: 70px;width: 80px;"> </div></strong></td>
                                                         <td></td>
                                                     </tr>
                                                      <tr>
                                                         <td>
-                                                       <strong>ZipCode</strong>
+                                                       <strong>Id Card</strong>
                                                         </td>
                                                         <td></td>
-                                                        <td> <strong>12123</strong></td>
-                                                        <td></td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>
-                                                       <strong>User Type</strong>
-                                                        </td>
-                                                        <td></td>
-                                                        <td> <strong>Seller                                        </strong></td>
+                                                        <td> <strong>  <img src="/img/id_card/<?php echo $user['id_card'];?>" class="img-responsive" alt="" style="height: 70px;width: 80px;"> </div></strong></td>
                                                         <td></td>
                                                     </tr>
                                                 </tbody></table>
@@ -197,21 +219,40 @@
                                 <!-- END CHANGE AVATAR TAB -->
                                 <!-- CHANGE PASSWORD TAB -->
                                 <div class="tab-pane" id="tab_1_3">
-                                    <form action="#">
-                                        <div class="form-group">
-                                            <label class="control-label">Current Password</label>
-                                            <input type="password" class="form-control" /> </div>
-                                        <div class="form-group">
-                                            <label class="control-label">New Password</label>
-                                            <input type="password" class="form-control" /> </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Re-type New Password</label>
-                                            <input type="password" class="form-control" /> </div>
-                                        <div class="margin-top-10">
-                                            <a href="javascript:;" class="btn green"> Change Password </a>
-                                            <a href="javascript:;" class="btn default"> Cancel </a>
+                                   <?php echo $this->Form->create($user, array('id'=>'edit-form','type'=>'file','url'=>'/admin/users/upload_qr/'.$user['id'])); ?>
+                                       <div class="form-group">
+                                            <label for="exampleInputFile1">Upload QR Code</label>
+                                            <input type="file" id="exampleInputFile1" name="file">
                                         </div>
-                                    </form>
+                                       <div class="margiv-top-10">
+                                            <button class="btn green"> Save Changes </button>
+                                            <a href="/admin/users" class="btn default"> Cancel </a>
+                                       </div>
+                                    <?php echo $this->Form->end();?>
+                                </div>
+                                <div class="tab-pane" id="tab_1_4">
+                                    <?php echo $this->Form->create($user, array('id'=>'edit-form','type'=>'file','url'=>'/admin/users/change_avatar/'.$user['id'])); ?>
+                                       <div class="form-group">
+                                            <label for="exampleInputFile1">Upload Profile Image</label>
+                                            <input type="file" id="exampleInputFile1" name="file">
+                                        </div>
+                                       <div class="margiv-top-10">
+                                            <button class="btn green"> Save Changes </button>
+                                            <a href="/admin/users" class="btn default"> Cancel </a>
+                                       </div>
+                                    <?php echo $this->Form->end();?>
+                                </div>
+                                <div class="tab-pane" id="tab_1_5">
+                                    <?php echo $this->Form->create($user, array('id'=>'edit-form','type'=>'file','url'=>'/admin/users/upload_id/'.$user['id'])); ?>
+                                       <div class="form-group">
+                                            <label for="exampleInputFile1">Upload ID Card</label>
+                                            <input type="file" id="exampleInputFile1" name="file">
+                                        </div>
+                                       <div class="margiv-top-10">
+                                            <button class="btn green"> Save Changes </button>
+                                            <a href="/admin/users" class="btn default"> Cancel </a>
+                                       </div>
+                                    <?php echo $this->Form->end();?>
                                 </div>
                                 <!-- END CHANGE PASSWORD TAB -->
                             </div>

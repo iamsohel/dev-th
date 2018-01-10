@@ -4,7 +4,7 @@
         <i class="fa fa-circle"></i>
     </li>
     <li>
-        <span class="active">Users</span>
+        <span class="active">Members</span>
     </li>
 </ul>
 <?php echo $this->Flash->render() ?>
@@ -15,7 +15,7 @@
 <div class="portlet-title">
 <div class="caption font-red-sunglo">
 <i class="fa fa-users font-red"></i>
-<span class="caption-subject font-red bold uppercase">All Users</span>
+<span class="caption-subject font-red bold uppercase">All Members</span>
 </div>
 <div class="actions">
 <div class="btn-group">
@@ -35,9 +35,8 @@
             <th class="text-center"> # </th>
             <th class="text-center">Name </th>
             <th class="text-center">Email</th>
-            <th class="text-center">Phone</th>
-            <th class="text-center">Address</th>
-            <th class="text-center">Status</th>
+            <th class="text-center">Profession</th>
+            <th class="text-center">Member Category</th>
             <th class="text-center"> Action </th>
         </tr>
         <tr>
@@ -54,7 +53,7 @@
             </td>
             <td></td>
             <td></td>
-            <td></td>
+           
             <td class="text-center">
                 <button class="btn btn-sm green" type="submit" name="search" value="search">
                     <i class="fa fa-search"></i>
@@ -74,13 +73,11 @@
             <td class="text-center"> <?php echo $user['id'];?></td>
             <td > <?php echo $user['name'];?></td>
             <td > <?php echo $user['email'];?></td>
-            <td class="text-center"> <?php echo $user['phone'];?> </td>
-            <td class="text-center"> <?php echo $user['address'];?></td>
-            <td class="text-center"> <?php echo $user['status'];?></td>
+            <td class="text-center"> <?php echo $user['profession'];?> </td>
+            <td class="text-center"> <?php echo $user['category']['name'];?></td>
             <td class="text-center">
-                <a href="/admin/users/view" class="btn btn-outline btn-circle btn-xs purple">View</a> 
-                <a href="/admin/users/edit" class="btn btn-outline btn-circle btn-xs blue">Edit</a>
-                <a href="/admin/users/delete" class="btn btn-outline btn-circle btn-xs red">Delete</a>
+                <a href="/admin/users/view/<?php echo $user['id'];?>" class="btn btn-outline btn-circle btn-xs purple">View</a> 
+                <a href="/admin/users/delete/<?php echo $user['id'];?>" class="btn btn-outline btn-circle btn-xs red">Delete</a>
             </td>
         </tr>
     <?php }?>

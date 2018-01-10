@@ -34,20 +34,10 @@
                     <div class="m-login__container">
                         <div class="m-login__logo">
                             <a href="#">
-                                <img src="/img/logo-1.png">
+                                <img src="/img/softpro-logo.png">
                             </a>
                         </div>
                        <?php echo $this->fetch('content'); ?>
-                        <div class="m-login__account">
-                            <span class="m-login__account-msg">
-                                Don't have an account yet ?
-                            </span>
-                            &nbsp;&nbsp;
-                            <a href="javascript:;" id="m_login_signup" class="m-link m-link--light m-login__account-link">
-                                Sign Up
-                            </a>
-                        </div>
-                         
                     </div>
                 </div>
             </div>
