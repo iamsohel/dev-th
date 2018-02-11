@@ -17,7 +17,8 @@
                                 <div class="display">
                                     <div class="number">
                                         <h3 class="font-green-sharp">
-                                            <span data-counter="counterup" data-value="7800">0</span>
+                                            <span data-counter="counterup" data-value="7800">
+                                                <?php echo $user;?></span>
                                         </h3>
                                         <small>Total Members</small>
                                     </div>
@@ -32,7 +33,7 @@
                                         </span>
                                     </div>
                                     <div class="status">
-                                        <div class="status-title"> <a href="/admin/members">View</a></div>
+                                        <div class="status-title"> <a href="/admin/users">View</a></div>
                                         
                                     </div>
                                 </div>
@@ -43,12 +44,12 @@
                                 <div class="display">
                                     <div class="number">
                                         <h3 class="font-red-haze">
-                                             <span data-counter="counterup" data-value="7">7</span>
+                                             <span data-counter="counterup" data-value="7"><?php echo $image;?></span>
                                         </h3>
-                                        <small>Pages</small>
+                                        <small>Images</small>
                                     </div>
                                     <div class="icon">
-                                        <i class="fa fa-file"></i>
+                                        <i class="fa fa-picture-o"></i>
                                     </div>
                                 </div>
                                 <div class="progress-info">
@@ -58,7 +59,7 @@
                                         </span>
                                     </div>
                                     <div class="status">
-                                        <div class="status-title"><a href="/admin/pages">View</a></div>
+                                        <div class="status-title"><a href="/admin/media/image_folders">View</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -68,12 +69,12 @@
                                 <div class="display">
                                     <div class="number">
                                         <h3 class="font-blue-sharp">
-                                            <span data-counter="counterup" data-value="567">?</span>
+                                            <span data-counter="counterup" data-value="567"><?php echo $video;?></span>
                                         </h3>
-                                        <small>Galary</small>
+                                        <small>Videos</small>
                                     </div>
                                     <div class="icon">
-                                        <i class="fa fa-snowflake-o "></i>
+                                        <i class="fa fa-video-camera "></i>
                                     </div>
                                 </div>
                                 <div class="progress-info">
@@ -83,7 +84,7 @@
                                         </span>
                                     </div>
                                     <div class="status">
-                                        <div class="status-title"><a href="/admin/galaries">View</a></div>
+                                        <div class="status-title"><a href="/admin/media/video_folders">View</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +109,7 @@
                                         </span>
                                     </div>
                                     <div class="status">
-                                        <div class="status-title"> <a href="/admin/users/view">View</a></div>
+                                        <div class="status-title"> <a href="/admin/users/view/<?php echo $session['Auth']['User']['id'];?>">View</a></div>
                                     </div>
                                 </div>
                             </div>

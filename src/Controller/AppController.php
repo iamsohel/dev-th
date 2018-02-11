@@ -36,7 +36,7 @@ class AppController extends Controller
             ]);
             $this->viewBuilder()->layout('admin');
         } else {
-            $this->loadComponent('Auth', [
+            /*$this->loadComponent('Auth', [
                 'authorize' => 'Controller',
                 'authenticate' => [
                     'Form' => [
@@ -45,9 +45,9 @@ class AppController extends Controller
                     ]
                 ],
             ]);
-            if ($this->Auth->user()) {
-                $this->viewBuilder()->layout('user_admin');
-            }
+            if ($this->Auth->user()) {*/
+                $this->viewBuilder()->layout('main_site');
+            //}
         }
 
         $this->Session = $this->request->session();
@@ -156,6 +156,16 @@ class AppController extends Controller
         $this->Notifications->addToLog($options);
     }
 
+    public function Image($type)
+    {
+         if (!empty($_FILES['file']['name'])) {
+            $dir = getcwd() . DS . 'img' . DS . $type . DS;
+            $imageName = time() . '_' . $this->randomnum(7) . '_' . str_replace(" ", "", $_FILES['file']['name']);
+            move_uploaded_file($_FILES['file']['tmp_name'], $dir . $imageName);
+            return $imageName;
+        }
+    }
+
     public function uploadImage($type) {
         if (!empty($_FILES['file']['name'])) {
             $dir = getcwd() . DS . 'img' . DS . $type . DS;
@@ -164,6 +174,50 @@ class AppController extends Controller
             return $imageName;
         }
     }
+
+    public function uploadCoverImage($type) {
+        if (!empty($_FILES['cover']['name'])) {
+            $dir = getcwd() . DS . 'img' . DS . $type . DS;
+            $imageName = time() . '_' . $this->randomnum(7) . '_' . str_replace(" ", "", $_FILES['cover']['name']);
+            move_uploaded_file($_FILES['cover']['tmp_name'], $dir . $imageName);
+            return $imageName;
+        }
+    }
+
+    public function uploadFile($type) {
+        if (!empty($_FILES['pdf']['name'])) {
+            $dir = getcwd() . DS . 'img' . DS . $type . DS;
+            $imageName = $_FILES['pdf']['name'];
+            move_uploaded_file($_FILES['pdf']['tmp_name'], $dir . $imageName);
+            return $imageName;
+        }
+    }
+    public function uploadMedia1($type) {
+        if (!empty($_FILES['file1']['name'])) {
+            $dir = getcwd() . DS . 'img' . DS . $type . DS;
+            $imageName = $_FILES['file1']['name'];
+            move_uploaded_file($_FILES['file1']['tmp_name'], $dir . $imageName);
+            return $imageName;
+        }
+    }
+    public function uploadMedia2($type) {
+        if (!empty($_FILES['file2']['name'])) {
+            $dir = getcwd() . DS . 'img' . DS . $type . DS;
+            $imageName = $_FILES['file2']['name'];
+            move_uploaded_file($_FILES['file2']['tmp_name'], $dir . $imageName);
+            return $imageName;
+        }
+    }
+    public function uploadMedia3($type) {
+        if (!empty($_FILES['file3']['name'])) {
+            $dir = getcwd() . DS . 'img' . DS . $type . DS;
+            $imageName = $_FILES['file3']['name'];
+            move_uploaded_file($_FILES['file3']['tmp_name'], $dir . $imageName);
+            return $imageName;
+        }
+    }
+
+    
 
     function seoUrl($string) {
         //Unwanted:  {UPPERCASE} ; / ? : @ & = + $ , . ! ~ * ' ( )

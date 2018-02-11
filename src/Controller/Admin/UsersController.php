@@ -394,6 +394,10 @@ class UsersController extends AppController
 
     public function committee(){
         $this->add_model(array('Users'));
+        $advisor = $this->Users->find()->where(['member_category'=>1])->toArray();
+        $on_going = $this->Users->find()->where(['member_category'=>2])->toArray();
+        $general = $this->Users->find()->where(['member_category'=>3])->toArray();
+        $this->set(compact('advisor','on_going','general'));
     }
 
 }

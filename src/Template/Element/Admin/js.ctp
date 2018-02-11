@@ -7,13 +7,16 @@ switch ($action) {
     case 'admin_Users_changePassword':
         echo $this->Html->script(array('/js/profile.min.js'));
         break;
+    case 'admin_Notices_add':
+    case 'admin_Notices_index':
+     case 'admin_Notices_update':
     case 'admin_Pages_home':
-        echo $this->Html->script(array('/js/markdown.js','/js/bootstrap-markdown.js','/js/summernote.min.js','/js/components-editors.min.js'));
+        echo $this->Html->script(array('/js/markdown.js','/js/bootstrap-markdown.js','/js/summernote.min.js','/js/components-editors.min.js','/js/bootstrap-datepicker.min.js'));
 	    break;
 	case 'admin_Media_images':
 	case 'admin_Media_videos':
         echo $this->Html->script(array('/js/jquery.cubeportfolio.min.js','/js/portfolio-1.min.js'));
-        
+         break;
 		default:
 		break;
 }

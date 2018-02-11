@@ -10,6 +10,24 @@
                     <span class="selected"></span>
                 </a>
             </li>
+             <li <?php if($this->name=='Notices'){ ?> class="nav-item active" <?php }?>>
+                <a href="/admin/notices" class="nav-link nav-toggle">
+                    <i class="fa fa-envelope"></i>
+                    <span class="title">Notices</span>
+                </a>
+            </li>
+             <li <?php if($this->name=='Publications'){ ?> class="nav-item active" <?php }?>>
+                <a href="/admin/publications" class="nav-link nav-toggle">
+                    <i class="fa fa-newspaper-o"></i>
+                    <span class="title">Media & Publications</span>
+                </a>
+            </li>
+            <li <?php if($this->name=='Member'){ ?> class="nav-item active" <?php }?>>
+                <a href="/admin/member" class="nav-link nav-toggle">
+                    <i class="fa fa-user"></i>
+                    <span class="title">Users</span>
+                </a>
+            </li>
             <li <?php if($this->name=='Users'){ ?> class="nav-item active" <?php }?>>
                 <a href="/admin/users" class="nav-link nav-toggle">
                     <i class="fa fa-users"></i>
@@ -61,17 +79,18 @@
             <li <?php if($this->name=='Media'){ ?> class="nav-item active" <?php }?>>
                 <a href="/admin/media" class="nav-link nav-toggle">
                     <i class="fa fa-video-camera"></i>
-                    <span class="title">Media & Gallery</span>
+                    <span class="title">Gallery</span>
+                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item">
-                        <a href="/admin/media/images" class="nav-link ">
+                        <a href="/admin/media/image_folders" class="nav-link ">
                             <i class="fa fa-picture-o"></i>
                             <span class="title">Images</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="/admin/media/videso" class="nav-link ">
+                        <a href="/admin/media/video_folders" class="nav-link ">
                             <i class="fa fa-video-camera"></i>
                             <span class="title">Videos</span>
                         </a>

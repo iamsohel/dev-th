@@ -13,6 +13,10 @@ class DashboardController extends AppController
     }
 
     public function index(){
-    	
+    	$this->add_model(array('Images','Videos','Users'));
+    	$user = $this->Users->find()->count();
+    	$image = $this->Images->find()->count();
+    	$video = $this->Videos->find()->count();
+    	$this->set(compact('user','image','video'));
     }
 }

@@ -45,6 +45,7 @@ Dev.admin_users_add = function() {
             email: {required: true, email: true},
             member_id: {required: true},
             nid: {required: true},
+            link: {required: true},
             //rpassword: {required: true, equalTo: "#password"},
         },
         messages: {
@@ -52,6 +53,7 @@ Dev.admin_users_add = function() {
             email:{required: 'Please enter your email address',email: 'Please enter a VALID email address'},
             member_id: {required: 'Please enter Member Id'},
             nid: {required: 'Please enter NId'},
+            link: {required: 'Please enter video link'},// used for add_video ctp
             //rpassword: {required: 'Please enter confirm password'},
         }
     });
@@ -96,4 +98,29 @@ Dev.admin_users_cpassword = function() {
         }
     });
 }
+
+var DateTimePickers = function () {
+    var handleDatePickers = function () {
+
+        if (jQuery().datepicker) {
+            $('.date-picker').datepicker({
+                rtl: App.isRTL(),
+                orientation: "left",
+                autoclose: true
+            });
+        }
+        // Workaround to fix datepicker position on window scroll
+        /*  $(document).scroll(function () {
+              $('#form_modal2 .date-picker').datepicker('place'); //#modal is the id of the modal
+          });*/
+    }
+    return {
+        init: function () {
+            handleDatePickers();
+        }
+    };
+}();
+jQuery(document).ready(function () {
+    DateTimePickers.init();
+});
 
