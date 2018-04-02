@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Admin | Th</title>
+        <title>Admin | Adhuna Theater Bangladesh</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="author" />
@@ -27,7 +27,7 @@
         <link href="/admin/css/custom.css" rel="stylesheet" type="text/css" />
         <?php echo $this->element('Admin/css'); ?>
         <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="favicon.ico" /> </head>
+        <link rel="shortcut icon" type="image/x-icon" href="/front/images/favicon.png"/> </head>
     <!-- END HEAD -->
 
     <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo page-md">

@@ -7,14 +7,14 @@
     <meta name="keywords" content="Adhuna Theater" >
     <meta name="description" content="Adhuna Theater">
     <meta name="author" content="SOFT PRO IT">
-	
+    
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/front/images/favicon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png"/>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-    <link rel="stylesheet" type="text/css" href="/front/css/packages.min.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/packages.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/default.css">
 </head>
 <body class="sticky-menu">
     <div id="loader">
@@ -30,20 +30,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-4">
-                <a href="/" id="logo" title="Adhuna" class="logo-image" data-bg-image="/front/images/logo.png">Adhuna Logo
+                <a href="/" id="logo" title="Adhuna" class="logo-image" data-bg-image="/images/logo.png">Adhuna Logo
                 </a>
             </div>
             <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-8 phl0">
                 
-				<div class="hidden-xs hidden-sm"> <!-- Hidden in Mobile -->
-				<div class="header_author">
+                <div class="hidden-xs hidden-sm"> <!-- Hidden in Mobile -->
+                <div class="header_author">
                     <a href="/">Home</a>
                     
                 </div>
                 <div class="header_ticket">
-                    <a href="#">Members</a>
+                    <a href="/members">Members</a>
                 </div>
-				</div>
+                </div>
                 
                 <div class="button_container" id="toggle">
                      <span class="top"></span>
@@ -54,19 +54,272 @@
 <a href="#" class="close-window"></a>
   <nav class="overlay-menu">
     <ul >
-        <li ><a href="index.html">Home</a></li>
-        <li><a href="#">Members</a></li>
-        <li><a href="#">Notice Board</a></li>
+        <li ><a href="/">Home</a></li>
+        <li><a href="/members">Members</a></li>
+        <li><a href="#">Latest Events</a></li>
         <li><a href="#">Media & Publications</a></li>
-		<li><a href="#">Video Gllery</a></li>
-		<li><a href="#">Image Gllery</a></li>
+        <li><a href="#">Video Gllery</a></li>
+        <li><a href="#">Image Gllery</a></li>
     </ul>
   </nav>
 </div>            </div>
         </div>
     </div>
 </header>
-  <?php echo $this->fetch('content'); ?>  
+<div class="fullwidth-slider">
+    <div id="headerslider" class="carousel slide"> 
+        <ol class="carousel-indicators">
+            <li data-target="#headerslider" data-slide-to="0" class="active"></li>
+            <li data-target="#headerslider" data-slide-to="1"></li>
+            <li data-target="#headerslider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="fill" data-bg-image="/images/header/slider1.jpg">
+                 <div class="bs-slider-overlay"></div>
+                    <div class="container movie-slider-container"> 
+                        <div class="row">
+                             <div class="col-sm-12 movie-slider-content"> 
+                                <div class="slider-content" >
+                                    
+                                    <div class="slide_right" data-animation="animated bounceInRight">
+                                        <a href="#" class="btn-trailer">watch videos</a> <a href="#" class="btn-ticket">See Gallery</a>
+                                        <ul class="award-logo">
+                                            <li><img src="images/header/icon1.png" alt="icon" ></li>
+                                            <li><img src="images/header/icon2.png" alt="icon"></li>
+                                            <li><img src="images/header/icon3.png" alt="icon"></li>
+                                            <li><img src="images/header/icon4.png" alt="icon"></li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" data-bg-image="/images/header/slider2.jpg">
+                 <div class="bs-slider-overlay"></div>
+                    <div class="container movie-slider-container"> 
+                        <div class="row">
+                             <div class="col-sm-12 movie-slider-content"> 
+                                <div class="slider-content" >
+                                    
+                                    <div class="slide_right" data-animation="animated bounceInRight">
+                                        <a href="#" class="btn-trailer">watch videos</a> <a href="#" class="btn-ticket">See Gallery</a>
+                                        <ul class="award-logo">
+                                            <li><img src="images/header/icon1.png" alt="icon" ></li>
+                                            <li><img src="images/header/icon2.png" alt="icon"></li>
+                                            <li><img src="images/header/icon3.png" alt="icon"></li>
+                                            <li><img src="images/header/icon4.png" alt="icon"></li>
+                                        </ul>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" data-bg-image="/images/header/slider3.jpg">
+                 <div class="bs-slider-overlay"></div>
+                    <div class="container movie-slider-container"> 
+                        <div class="row">
+                             <div class="col-sm-12 movie-slider-content"> 
+                                <div class="slider-content" >
+                                  
+                                    <div class="slide_right" data-animation="animated bounceInRight">
+                                        <a href="#" class="btn-trailer">watch videos</a> <a href="#" class="btn-ticket">See Gallery</a>
+                                        <ul class="award-logo">
+                                            <li><img src="images/header/icon1.png" alt="icon" ></li>
+                                            <li><img src="images/header/icon2.png" alt="icon"></li>
+                                            <li><img src="images/header/icon3.png" alt="icon"></li>
+                                            <li><img src="images/header/icon4.png" alt="icon"></li>
+                                        </ul>
+                                    </div>
+                                    <div class="chart-cirle" data-animation="animated bounceInUp">
+                                        <div class="chart-circle-l" data-animation="animated bounceInUp">
+                                            <div class="circle-chart" data-circle-width="7" data-percent="86" data-text="30">
+                                            </div>
+                                            <span>Days</span>
+                                        </div>
+                                        <div class="chart-circle-r" data-animation="animated bounceInUp">
+                                            <div class="circle-chart" data-circle-width="7" data-percent="74" data-text="1.5">
+                                            </div>
+                                            <span>Months</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="carousel-control left" href="#headerslider" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control right" href="#headerslider" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>  
+</div>
+      
+         
+<section class="section-content">
+    <div class="section-content pvb0 bg-cover" data-bg-image="/images/coming-bg.jpg">
+    <div class="container pvt80">
+        <div class="row">
+        
+                          
+            <div class="col-md-12 mb-5">
+             
+                          
+                            <div class="entry-desc">  
+                                    <div class="row mh0">
+                                        <div class="col-md-4 col-sm-4 col-xs-12 comming_movie ph0">
+                                            <img class="img-responsive" src="/images/1.jpg" alt="Image">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 col-xs-12 entry-text phl3 bengali">
+                                            <h3 class="dark ">আমরা অধুনা থিয়েটার</h3>
+                                            <p class="dark">
+                                            আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার।
+                                            আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার।
+                                            </p>
+                                            <a href="#" class="btn with-icon"><i class="fa fa-image"></i> See Gallery</a>
+                                            <a href="#" class="btn with-icon"><i class="fa fa-user"></i>Our Members</a>
+                                        </div>
+                                       </div>           
+                                </div>        
+          
+            
+            
+            </div>
+        </div>
+         <div class="devider"></div>
+         <a href="#"><img class="img-responsive" src="/images/ad/advertisement.jpg" ></a>
+         <div class="devider"></div>
+
+         
+        <div class="row">
+        
+                          
+                        
+                            <div class="entry-desc">  
+                                    <div class="row mh0 mb-5">
+                                    
+                                    <div class="col-md-12 col-xs-12 comming_movie mb-5 mt-5">
+                                     <h2 class="dark text-center tuper">Watch Our Videos</h2>  
+                                    </div> 
+                                     
+                                       <div class="col-md-6 col-xs-12 comming_movie ph0">
+                                          
+                                           <iframe width="100%" height="325px" src="https://www.youtube.com/embed/SQHlmEw6M5E?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        
+                                           
+                                       </div>
+                                      
+
+                                       <div class="col-md-6 col-xs-12 comming_movie ph0">
+                                           <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSoftPro.bd%2Fvideos%2F799210750165658%2F&width=700&show_text=false&appId=172276930250010&height=392" width="100%" height="325px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                                        </div>
+                                        
+                                       </div>           
+                                </div>        
+          
+            
+            
+            
+        </div>
+        
+         <div class="devider"></div>
+         <a href="#"><img class="img-responsive" src="/images/ad/advertisement.jpg" ></a>
+         
+         <div class="devider"></div>
+        </div>
+        
+</div>       
+
+    
+    <div class="fullscreen-section bg-black pvb0">
+        <div class="container wpc-boxoffice pv8">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <h3>Check Our Events</h3>
+                    <ul class="wpc-box-list">
+                       <li class="wpc-box-item" > 
+                            <ol>
+                                <li class="bx-item-t"><a href="#"><img width="100px" src="/images/1.jpg" alt="Image"></a></li>
+                                <li class="bx-item-c">1</li>
+                                <li class="bx-item-title">
+                                    <a href="#"><h4>Event : Our event</h4></a>
+                                    <span>Short description goes here</span>
+                                </li>
+                                <li class="bx-item-d"><a href="#" class="btn">More</a></li>
+                                <li class="bx-item-m">2 Feb 2018</li>
+                            </ol>
+                        </li>
+                           
+                           <li class="wpc-box-item" > 
+                            <ol>
+                                <li class="bx-item-t"><a href="#"><img width="100px" src="/images/1.jpg" alt="Image"></a></li>
+                                <li class="bx-item-c">2</li>
+                                <li class="bx-item-title">
+                                    <a href="#"><h4>Event : Our event</h4></a>
+                                    <span>Short description goes here</span>
+                                </li>
+                                <li class="bx-item-d"><a href="#" class="btn">More</a></li>
+                                <li class="bx-item-m">1 Jan 2018</li>
+                            </ol>
+                        </li>
+                        
+                        <li class="wpc-box-item" > 
+                            <ol>
+                                <li class="bx-item-t"><a href="#"><img width="100px" src="/images/2.jpg" alt="Image"></a></li>
+                                <li class="bx-item-c">3</li>
+                                <li class="bx-item-title">
+                                    <a href="#"><h4>Event : Our event</h4></a>
+                                    <span>Short description goes here</span>
+                                </li>
+                                <li class="bx-item-d"><a href="#" class="btn">More</a></li>
+                                <li class="bx-item-m">31 Dec 2017</li>
+                            </ol>
+                        </li>
+                        
+                           <li class="wpc-box-item" > 
+                            <ol>
+                                <li class="bx-item-t"><a href="#"><img width="100px" src="/images/3.jpg" alt="Image"></a></li>
+                                <li class="bx-item-c">4</li>
+                                <li class="bx-item-title">
+                                    <a href="#"><h4>Event : Our event</h4></a>
+                                    <span>Short description goes here</span>
+                                </li>
+                                <li class="bx-item-d"><a href="#" class="btn">More</a></li>
+                                <li class="bx-item-m">1 Jul 2017</li>
+                            </ol>
+                        </li>
+                        
+                       <li class="wpc-box-item" > 
+                            <ol>
+                                <li class="bx-item-t"><a href="#"><img width="100px" src="/images/1.jpg" alt="Image"></a></li>
+                                <li class="bx-item-c">5</li>
+                                <li class="bx-item-title">
+                                    <a href="#"><h4>Event : Our event</h4></a>
+                                    <span>Short description goes here</span>
+                                </li>
+                                <li class="bx-item-d"><a href="#" class="btn">More</a></li>
+                                <li class="bx-item-m">5 Feb 2017</li>
+                            </ol>
+                        </li>
+                        
+                       
+                    </ul>
+                </div>
+                </div>
+        </div>
+    </div>    
 
 </section>
     <footer id="footer">
@@ -76,12 +329,12 @@
                     <div class="widget">
                         <h5 class="widget-title">Menu</h5>
                         <ul class="menu">
-                            <li ><a href="index.html">Home</a></li>
-                            <li><a href="#">Members</a></li>
-                            <li><a href="#">Notice Board</a></li>
+                            <li ><a href="/">Home</a></li>
+                            <li><a href="/members">Members</a></li>
+                            <li><a href="#">Latest Events</a></li>
                             <li><a href="#">Media & Publications</a></li>
-		                    <li><a href="#">Video Gllery</a></li>
-		                    <li><a href="#">Image Gllery</a></li>
+                            <li><a href="#">Video Gllery</a></li>
+                            <li><a href="#">Image Gllery</a></li>
                         </ul>
                     </div>
                    </div>
@@ -97,7 +350,7 @@
                             <i class="fa fa-phone"></i> + 8801670814387
                          </p> 
                     </div>
-					 <div class="widget">
+                     <div class="widget">
                         <div class="social-links">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -133,9 +386,9 @@
             <div class="container">
                 <div class="row copyright-text">
                     <div class="col-sm-12 col-md-6">
-                        <p class="mv3 mvt0 text-left">&copy; Copyrights 2017 Adhuna. All rights reserved</p>
+                        <p class="mv3 mvt0 text-left">&copy; Copyrights <?php echo date('Y');?> Adhuna. All rights reserved</p>
                     </div>
-					<div class="col-sm-12 col-md-6">
+                    <div class="col-sm-12 col-md-6">
                         <p class="mv3 mvt0 text-right">Design & Developed by: <a href="#">SOFT PRO IT</a></p>
                     </div>
                 </div>
@@ -220,9 +473,17 @@
     </div>
 
     <!-- Include jQuery and Scripts -->
-    <script type="text/javascript" src="/front/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/front/js/packages.min.js"></script>
-    <script type="text/javascript" src="/front/js/scripts.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/packages.min.js"></script>
+    <script type="text/javascript" src="/js/scripts.min.js"></script>
 <!-- jQuery easing plugin -->
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 1200
+    })
+  });
+</script>
 </body>
 </html> 

@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8" />
         <title>
-            Pro | Admin Login 
+           Adhuna Theater Bangladesh | Admin Login 
         </title>
         <meta name="description" content="Latest updates and statistic charts">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,7 @@
         <link href="/css/vendors.bundle.css" rel="stylesheet" type="text/css" />
         <link href="/css/style.bundle.css" rel="stylesheet" type="text/css" />
         <!--end::Base Styles -->
-        <link rel="shortcut icon" href="/assets/demo/default/media/img/logo/favicon.ico" />
+       <link rel="shortcut icon" type="image/x-icon" href="/front/images/favicon.png"/>
     </head>
     <!-- end::Head -->
     <!-- end::Body -->
