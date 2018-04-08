@@ -13,7 +13,7 @@
              <li <?php if($this->name=='Notices'){ ?> class="nav-item active" <?php }?>>
                 <a href="/admin/notices" class="nav-link nav-toggle">
                     <i class="fa fa-envelope"></i>
-                    <span class="title">Notices</span>
+                    <span class="title">Events</span>
                 </a>
             </li>
              <li <?php if($this->name=='Publications'){ ?> class="nav-item active" <?php }?>>
@@ -55,27 +55,7 @@
                     </li>
                 </ul>
             </li>
-            <li <?php if($this->name=='Pages'){ ?> class="nav-item active" <?php }?>>
-                <a href="/admin/pages" class="nav-link nav-toggle">
-                    <i class="fa fa-file"></i>
-                    <span class="title">Pages</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="/admin/pages/home" class="nav-link ">
-                            <i class="fa fa-h-square"></i>
-                            <span class="title">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/admin/users/add" class="nav-link ">
-                            <i class="fa fa-address-card"></i>
-                            <span class="title">About</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+           
             <li <?php if($this->name=='Media'){ ?> class="nav-item active" <?php }?>>
                 <a href="/admin/media" class="nav-link nav-toggle">
                     <i class="fa fa-video-camera"></i>

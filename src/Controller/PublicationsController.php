@@ -21,48 +21,26 @@ use Cake\Event\Event;
  *
  * Controller used by ExceptionRenderer to render error responses.
  */
-class ErrorController extends AppController
+class PublicationsController extends AppController
 {
-    /**
-     * Initialization hook method.
-     *
-     * @return void
-     */
+    
     public function initialize()
     {
         $this->loadComponent('RequestHandler');
     }
 
-    /**
-     * beforeFilter callback.
-     *
-     * @param \Cake\Event\Event $event Event.
-     * @return \Cake\Http\Response|null|void
-     */
-    public function beforeFilter(Event $event)
-    {
-    }
 
-    /**
-     * beforeRender callback.
-     *
-     * @param \Cake\Event\Event $event Event.
-     * @return \Cake\Http\Response|null|void
-     */
-    public function beforeRender(Event $event)
+    public function index()
     {
-        parent::beforeRender($event);
-
-        $this->viewBuilder()->setTemplatePath('Error');
-    }
-
-    /**
-     * afterFilter callback.
-     *
-     * @param \Cake\Event\Event $event Event.
-     * @return \Cake\Http\Response|null|void
-     */
-    public function afterFilter(Event $event)
-    {
+        $this->viewBuilder()->layout('main_site_2');
+        $this->add_model(array('Publications'));
+        $this->paginate = [
+            'limit' => 4,
+            'order' => [
+                'Publications.created' => 'desc'
+            ]
+        ];
+        $pubs = $this->paginate('Publications')->toArray();
+        $this->set(compact('pubs'));
     }
 }

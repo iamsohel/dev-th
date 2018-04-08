@@ -56,10 +56,10 @@
     <ul >
         <li ><a href="/">Home</a></li>
         <li><a href="/members">Members</a></li>
-        <li><a href="#">Latest Events</a></li>
-        <li><a href="#">Media & Publications</a></li>
-        <li><a href="#">Video Gllery</a></li>
-        <li><a href="#">Image Gllery</a></li>
+        <li><a href="/events">Latest Events</a></li>
+        <li><a href="/publications">Media & Publications</a></li>
+        <li><a href="/videos/folders">Video Gllery</a></li>
+        <li><a href="/images/folders">Image Gllery</a></li>
     </ul>
   </nav>
 </div>            </div>
@@ -188,8 +188,8 @@
                                             আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার।
                                             আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার। আমরা অধুনা থিয়েটার়। আমরা গ্রাম থিয়েটার।
                                             </p>
-                                            <a href="#" class="btn with-icon"><i class="fa fa-image"></i> See Gallery</a>
-                                            <a href="#" class="btn with-icon"><i class="fa fa-user"></i>Our Members</a>
+                                            <a href="/images/index" class="btn with-icon"><i class="fa fa-image"></i> See Gallery</a>
+                                            <a href="/members" class="btn with-icon"><i class="fa fa-user"></i>Our Members</a>
                                         </div>
                                        </div>           
                                 </div>        
@@ -331,10 +331,10 @@
                         <ul class="menu">
                             <li ><a href="/">Home</a></li>
                             <li><a href="/members">Members</a></li>
-                            <li><a href="#">Latest Events</a></li>
-                            <li><a href="#">Media & Publications</a></li>
-                            <li><a href="#">Video Gllery</a></li>
-                            <li><a href="#">Image Gllery</a></li>
+                            <li><a href="/events">Latest Events</a></li>
+                            <li><a href="/publications">Media & Publications</a></li>
+                            <li><a href="/videos/folders">Video Gllery</a></li>
+                            <li><a href="/images/folders">Image Gllery</a></li>
                         </ul>
                     </div>
                    </div>

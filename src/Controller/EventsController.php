@@ -6,15 +6,15 @@ use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
 
-class HomeController extends AppController
+class EventsController extends AppController
 {
 
     public function index()
     {
-        $this->viewBuilder()->layout('main_site');
+        $this->viewBuilder()->layout('main_site_2');
         $this->add_model(array('Notices'));
         $this->paginate = [
-            'limit' => 5,
+            'limit' => 3,
             'order' => [
                 'Notices.created' => 'desc'
             ]

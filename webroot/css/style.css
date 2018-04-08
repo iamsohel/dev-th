@@ -1,0 +1,6 @@
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+    color: #fff;
+    cursor: not-allowed;
+    background-color: #181818;
+    border-color: #ddd;
+}

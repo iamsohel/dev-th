@@ -97,7 +97,13 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleInputFile1"> Upload Profile Picture</label>
-                                    <input type="file" name="file" id="exampleInputFile1">
+                                    <input type="file" name="file1" id="exampleInputFile1">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputFile1"> Upload QR Code</label>
+                                    <input type="file" name="file2" id="exampleInputFile1">
                                 </div>
                             </div>
 

@@ -273,7 +273,8 @@ class UsersController extends AppController
         $this->add_model(array('Users','Bloods','Categories'));
         if (!empty($this->request->data)){
             $data = $this->request->data;
-            $data['image'] = $this->uploadImage('profile');
+            $data['image'] = $this->uploadMedia1('profile');
+            $data['qr_code'] =  $this->uploadMedia2('qr');
             $data['activation_key'] = md5($this->randomnum(8));
             $check_duplicate = $this->Users->find()->where(['email'=>$data['email']])->orWhere(['member_id'=>$data['member_id']])->first();
             if(empty($check_duplicate)){

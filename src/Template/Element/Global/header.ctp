@@ -13,8 +13,8 @@
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-    <link rel="stylesheet" type="text/css" href="css/packages.min.css">
-    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/packages.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/default.css">
 </head>
 <body class="sticky-menu">
     <div id="loader">
@@ -56,10 +56,10 @@
     <ul >
         <li ><a href="/">Home</a></li>
         <li><a href="/members">Members</a></li>
-        <li><a href="#">Latest Events</a></li>
-        <li><a href="#">Media & Publications</a></li>
-		<li><a href="#">Video Gllery</a></li>
-		<li><a href="#">Image Gllery</a></li>
+        <li><a href="/events">Latest Events</a></li>
+        <li><a href="/publications">Media & Publications</a></li>
+		<li><a href="/videos/folders">Video Gllery</a></li>
+		<li><a href="/images/folders">Image Gllery</a></li>
     </ul>
   </nav>
 </div>            </div>

@@ -35,6 +35,12 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    <label class="control-label">Event Name *</label>
+                                     <?php echo $this->Form->input('name',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Name')); ?> 
+                                </div>
+                            </div> 
+                            <div class="col-md-4">
+                                <div class="form-group">
                                     <label for="exampleInputFile1">Date *</label>
                                      <?php echo $this->Form->input('date',array('label' => false,'div'=>false,'class' => 'form-control form-control-inline input-medium date-picker','placeholder'=>'Date','data-date-format' => 'yyyy-mm-dd')); ?> 
                                 </div>
@@ -49,46 +55,58 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <label for="exampleInputFile1"> Notice</label>
-                                <?php echo $this->Form->input('name',array('label' => false,'div'=>false,'id' => 'summernote_1','placeholder'=>'Message','type' => 'textarea')); ?>
+                                <?php echo $this->Form->input('message',array('label' => false,'div'=>false,'id' => 'summernote_1','placeholder'=>'Message','type' => 'textarea')); ?>
                              </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="exampleInputFile1"> Media Logo</label>
                                     <input type="file" name="file1" id="exampleInputFile1">
                                 </div>
                             </div> 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="exampleInputFile1"> Media Logo</label>
                                     <input type="file" name="file2" id="exampleInputFile1">
                                 </div>
                             </div> 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="exampleInputFile1"> Media Logo</label>
                                     <input type="file" name="file3" id="exampleInputFile1">
                                 </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="exampleInputFile1"> Media Logo</label>
+                                    <input type="file" name="file4" id="exampleInputFile1">
+                                </div>
                             </div> 
                         </div>
                         <div class="row">
-                             <div class="col-md-4">
+                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="control-label">Url *</label>
                                      <?php echo $this->Form->input('url1',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Name')); ?> 
                                 </div>
                             </div> 
-                           <div class="col-md-4">
+                           <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="control-label">Url *</label>
                                      <?php echo $this->Form->input('url2',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Name')); ?> 
                                 </div>
                             </div> 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="control-label">Url *</label>
                                      <?php echo $this->Form->input('url3',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Name')); ?> 
+                                </div>
+                            </div> 
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Url *</label>
+                                     <?php echo $this->Form->input('url4',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Name')); ?> 
                                 </div>
                             </div> 
                         </div>

@@ -52,10 +52,12 @@ class NoticesController extends AppController
         $this->add_model(array('Notices','Categories'));
         if (!empty($this->request->data)){
             $data = $this->request->data;
+            //pr($data);exit;
             $data['banner_image'] = $this->Image('notice_banner');
             $data['media1'] = $this->uploadMedia1('media_logo');
             $data['media2'] = $this->uploadMedia2('media_logo');
             $data['media3'] = $this->uploadMedia3('media_logo');
+            $data['media4'] = $this->uploadMedia4('media_logo');
             $notice = $this->Notices->newEntity();
             $notice = $this->Notices->patchEntity($notice, $data);
             //pr($notice);exit();

@@ -40,11 +40,18 @@
                                     <?php echo $this->Form->text('date', ['class' => 'form-control form-control-inline date-picker', "data-date-format" => "yyyy-mm-dd", 'value' => $date,'id'=>'date']); ?>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                   
+                                    <label>Name *</label>
+                                     <?php echo $this->Form->input('name', array('class' => 'form-control', 'type' => 'text', 'label' => false, 'div' => false)); ?>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-10">
-                                 <label>Notice</label>
-                                <?php echo $this->Form->input('name', array('class' => 'form-control', 'id'=>'summernote_1','type' => 'textarea', 'label' => false, 'div' => false)); ?>
+                                 <label>Message</label>
+                                <?php echo $this->Form->input('message', array('class' => 'form-control', 'id'=>'summernote_1','type' => 'textarea', 'label' => false, 'div' => false)); ?>
                              </div>
                         </div>
                         <div class="margiv-top-10">

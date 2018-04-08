@@ -33,7 +33,8 @@
         <?php echo $this->Form->create('Users', ['url' => '/admin/notices/index']); ?>
         <tr>
             <th width="10%" class="text-center">Date </th>
-            <th class="text-center">Message </th>
+            <th class="text-center">Name </th>
+              <th class="text-center">Message </th>
             <th width="22%" class="text-center"> Action </th>
         </tr>
         <tr>
@@ -45,10 +46,10 @@
             </td>
             <td>
                 <div class="form-group">
-                 <?php echo $this->Form->input('message',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Message')); ?> 
+                 <?php echo $this->Form->input('name',array('type' => 'text', 'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Name')); ?> 
                 </div>
             </td>
-       
+            <td></td>
            
             <td class="text-center">
                 <button class="btn btn-sm green" type="submit" name="search" value="search">
@@ -69,6 +70,7 @@
         <tr>
             <td class="text-center"> <?php echo date('d-m-Y',strtotime($notice['date']));?></td>
             <td> <?php echo $notice['name'];?></td>
+               <td> <?php echo $notice['message'];?></td>
             <td class="text-center">
                 <a href="/admin/notices/update/<?php echo $notice['id'];?>" class="btn btn-outline btn-circle btn-xs purple">Update</a> 
                 <a href="/admin/notices/delete/<?php echo $notice['id'];?>" class="btn btn-outline btn-circle btn-xs red">Delete</a>

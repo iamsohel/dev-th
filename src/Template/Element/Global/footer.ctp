@@ -7,10 +7,10 @@
                         <ul class="menu">
                             <li ><a href="/">Home</a></li>
                             <li><a href="/members">Members</a></li>
-                            <li><a href="#">Latest Events</a></li>
-                            <li><a href="#">Media & Publications</a></li>
-		                    <li><a href="#">Video Gllery</a></li>
-		                    <li><a href="#">Image Gllery</a></li>
+                            <li><a href="/events">Latest Events</a></li>
+                            <li><a href="/publications">Media & Publications</a></li>
+		                    <li><a href="/Videos/folders">Video Gllery</a></li>
+		                    <li><a href="/images/folders">Image Gllery</a></li>
                         </ul>
                     </div>
                    </div>

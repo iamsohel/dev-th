@@ -46,6 +46,11 @@ Dev.admin_users_add = function() {
             member_id: {required: true},
             nid: {required: true},
             link: {required: true},
+            phone: {required: true},
+            address: {required: true, email: true},
+            profession: {required: true},
+            blood_id: {required: true},
+            member_category: {required: true},
             //rpassword: {required: true, equalTo: "#password"},
         },
         messages: {

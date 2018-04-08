@@ -216,6 +216,14 @@ class AppController extends Controller
             return $imageName;
         }
     }
+    public function uploadMedia4($type) {
+        if (!empty($_FILES['file4']['name'])) {
+            $dir = getcwd() . DS . 'img' . DS . $type . DS;
+            $imageName = $_FILES['file4']['name'];
+            move_uploaded_file($_FILES['file4']['tmp_name'], $dir . $imageName);
+            return $imageName;
+        }
+    }
 
     
 
