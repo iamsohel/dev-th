@@ -51,7 +51,7 @@
                             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
                                 <div class="mt-card-item">
                                     <div class="mt-card-avatar mt-overlay-1 mt-scroll-down">
-                                        <img src="/img/cover_image/<?php echo $publication['cover'];?>" />
+                                        <a href="/admin/publications/download/<?php echo $publication['id']; ?>"><img src="/img/cover_image/<?php echo $publication['cover'];?>" /></a>
                                         <!-- <div class="mt-overlay">
                                             <ul class="mt-info">
                                                 <li>

@@ -69,21 +69,27 @@
 						  </div>	
 						  
 			               <div class="col-md-6 col-xs-12 dark">				
-			                  <form>
+
+			                  <?php echo $this->Form->create("Register", array('url' => '/admin/register/email','id'=>'add-form','type'=>'file')); ?>
+
 							  <h3>SUBMIT FORM</h3>
 							  <hr>
 							      <div class="form-group">
                                     <label for="Name">Name</label>
-                                    <input type="text" class="form-control" id="Name" placeholder="Name">
+
+                                    <?php echo $this->Form->input('name',array('type' => 'text',
+                                     'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Name')); ?>
                                   </div>
 								  
                                   <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="Email" placeholder="Email">
+                                    <?php echo $this->Form->input('email',array('type' => 'email',
+                                                                        'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Email')); ?>
                                   </div>
                                   <div class="form-group">
                                     <label for="exampleInputPassword1">Phone</label>
-                                    <input type="phone" class="form-control" id="phone" placeholder="Phone">
+                                   <?php echo $this->Form->input('phohe',array('type' => 'text',
+                                                                       'label' => false,'div'=>'false','class' => 'form-control','placeholder'=>'Phone')); ?>
                                   </div>
                                   <div class="form-group">
 								  <!-- Pdf / Doc / Image file upload -->
@@ -97,7 +103,7 @@
                                     </label>
                                   </div>
                                   <button type="submit" class="btn btn-default">Submit</button>
-                             </form>	
+                            <?php echo $this->Form->end(); ?>
 				           </div>						
 			           
 						  

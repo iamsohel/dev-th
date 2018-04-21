@@ -43,4 +43,23 @@ class PublicationsController extends AppController
         $pubs = $this->paginate('Publications')->toArray();
         $this->set(compact('pubs'));
     }
+    public function download($id)
+    {
+        $this->viewBuilder()->enableAutoLayout(false);
+
+        $this->loadModel('Publications');
+        try {
+            $file = $this->Publications->get($id);
+            if(!empty($file)){
+                $path = WWW_ROOT.'img'.DS.'file'.DS.$file['file'];
+                $response = $this->response->withFile(
+                    $path, ['download' => true, 'name' => $file['name']]
+                );
+            }
+        }catch(Exception $e){
+
+        }
+        //pr($path);exit;
+        return $response;
+    }
 }

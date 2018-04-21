@@ -30,7 +30,7 @@
 					</div>
 					<div class="offer-content">
 					   
-							<img class="img-responsive" src="/img/cover_image/<?php echo $pub['cover'];?>">
+							<a href="/publications/download/<?php echo $pub['id']; ?>"><img class="img-responsive" src="/img/cover_image/<?php echo $pub['cover'];?>"></a>
 						
 						<h3 class="lead">
 							<?php echo $pub['name'];?>

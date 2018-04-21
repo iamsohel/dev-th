@@ -87,7 +87,7 @@
              <li <?php if($this->name=='Register'){ ?> class="nav-item active" <?php }?>>
                             <a href="/admin/register" class="nav-link nav-toggle">
                                 <i class="fa fa-video-camera"></i>
-                                <span class="title">Advertisement</span>
+                                <span class="title">Registration</span>
                             </a>
                         </li>
         </ul>
