@@ -84,6 +84,12 @@
                     <span class="title">Advertisement</span>
                 </a>
             </li>
+             <li <?php if($this->name=='Register'){ ?> class="nav-item active" <?php }?>>
+                            <a href="/admin/register" class="nav-link nav-toggle">
+                                <i class="fa fa-video-camera"></i>
+                                <span class="title">Advertisement</span>
+                            </a>
+                        </li>
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

@@ -44,7 +44,7 @@
 						  
                               	<p style="text-align:center;"> 
 								<!-- Pdf / Doc / Image file Download link -->
-								<a href="#"><i class="fa fa-download fa-3x"></i></a>		
+								<a href="/register/download"><i class="fa fa-download fa-3x"></i></a>
 								</p>				  
 						 </div>	
 				   </div>	
