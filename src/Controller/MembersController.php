@@ -22,9 +22,10 @@ class MembersController extends AppController
          $users_ad = $this->paginate($this->Users->find()->where(['member_category' => 1]))->toArray();
          $users_ge = $this->paginate($this->Users->find()->where(['member_category' => 3]))->toArray();
          $users_on = $this->paginate($this->Users->find()->where(['member_category' => 2]))->toArray();
+         $users_sib = $this->paginate($this->Users->find()->where(['member_category' => 9]))->toArray();
         $bloods = $this->Bloods->find('list')->toArray();
         $categories = $this->Categories->find('list')->where(['type'=>'Member'])->toArray();
-        $this->set(compact('users_ad','bloods','categories','users_on','users_ge'));
+        $this->set(compact('users_ad','bloods','categories','users_on','users_ge','users_sib'));
     }
     public function view($id)
     {

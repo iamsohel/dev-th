@@ -16,7 +16,58 @@
         </div>
         </div>  
 </div> 
-<div class="container-fluid pv11 ">
+          
+          <div class="container-fluid pv11">
+                <div class="row">
+                
+                   <div class="col-sm-3">
+                      
+                   </div>
+                   
+                   <div class="col-sm-6">
+                        <h3 class="cheading">ON GOING COMITTEE</h3>
+                   </div>
+                   <div class="col-sm-3">
+                      
+                   </div>
+                    <div class="col-sm-12">
+                      
+                        <div class="ticket-carousel pvt85">
+                            
+                               
+                                    <?php foreach($users_on as $user){?>
+                                    <div class="col-lg-2 col-md-3 col-sm-6 mb-5 mt-2">
+                                       <div class="swiper-slide">
+                                            <div class="movie-image" data-bg-image="/img/profile/<?php echo $user['image'];?>">
+                                                <div class="entry-hover">
+                                                    <div class="entry-actions">
+                                                        
+                                                        <a class="btn-ticket order_btn" onclick = "launch_comment_modal(<?php echo $user['id']; ?>)" data-toggle="modal" data-target="#membe" data-whatever="@fat">Read More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="entry-desc">
+                                                    <h3 class="entry-title"><?php echo $user['name'];?></h3>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <?php }?>
+                                    
+                                    
+                                    
+                          
+                            
+
+                           </div>
+                            
+                        </div>
+
+                    
+                </div>
+ 
+           </div>  
+<div class="container-fluid  ">
                 <div class="row">
 				
 				   <div class="col-sm-3">
@@ -63,28 +114,26 @@
                 </div>
  
            </div>    
-		
-		  <!-- Advisor Committee Members  --> 	
-		  
-		  <div class="container-fluid ">
+
+
+           <div class="container-fluid  ">
                 <div class="row">
-				
-				   <div class="col-sm-3">
-				      
-				   </div>
-				   
-				   <div class="col-sm-6">
-				        <h3 class="cheading">ON GOING COMITTEE</h3>
-				   </div>
-				   <div class="col-sm-3">
-				      
-				   </div>
+                
+                   <div class="col-sm-3">
+                      
+                   </div>
+                   
+                   <div class="col-sm-6">
+                        <h3 class="cheading">Cultural Siblings</h3>
+                   </div>
+                   <div class="col-sm-3">
+                      
+                   </div>
                     <div class="col-sm-12">
                       
                         <div class="ticket-carousel pvt85">
                             
-                               
-								    <?php foreach($users_on as $user){?>
+                               <?php foreach($users_sib as $user){?>
                                     <div class="col-lg-2 col-md-3 col-sm-6 mb-5 mt-2">
                                        <div class="swiper-slide">
                                             <div class="movie-image" data-bg-image="/img/profile/<?php echo $user['image'];?>">
@@ -103,12 +152,10 @@
                                     </div>  
                                     <?php }?>
                                     
-									
-									
-                          
-							
+                                
+                            
 
-						   </div>
+                           </div>
                             
                         </div>
 
@@ -116,6 +163,9 @@
                 </div>
  
            </div>    
+		
+		  <!-- Advisor Committee Members  --> 	
+  
 		
 		  <!-- General Members  --> 	
 		  

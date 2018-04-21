@@ -64,7 +64,7 @@
                                     <div class="cbp-caption-activeWrap">
                                         <div class="cbp-l-caption-alignCenter">
                                             <div class="cbp-l-caption-body">
-                                                <a href="/img/<?php echo$folder_name['name'];?>/<?php echo$image['image'];?>" class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase" data-title="Dashboard<br>by Paul Flavius Nechita">view larger</a>
+                                                <a href="/img/<?php echo$folder_name['name'];?>/<?php echo$image['image'];?>" class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase" data-title="Dashboard<br>by Paul Flavius Nechita">view larger</a><a href="/admin/media/removeImage/<?php echo$image['id'];?>" class="btn red uppercase btn red uppercase" >Delete image</a>
                                             </div>
                                         </div>
                                     </div>

@@ -77,6 +77,13 @@
                     </li>
                 </ul>
             </li>
+
+            <li <?php if($this->name=='Ads'){ ?> class="nav-item active" <?php }?>>
+                <a href="/admin/ads" class="nav-link nav-toggle">
+                    <i class="fa fa-video-camera"></i>
+                    <span class="title">Advertisement</span>
+                </a>
+            </li>
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

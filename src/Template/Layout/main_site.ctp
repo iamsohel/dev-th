@@ -60,6 +60,7 @@
         <li><a href="/publications">Media & Publications</a></li>
         <li><a href="/videos/folders">Video Gllery</a></li>
         <li><a href="/images/folders">Image Gllery</a></li>
+        <li><a href="/register">Register</a></li>
     </ul>
   </nav>
 </div>            </div>
@@ -198,8 +199,79 @@
             
             </div>
         </div>
-         <div class="devider"></div>
-         <a href="#"><img class="img-responsive" src="/images/ad/advertisement.jpg" ></a>
+    <div class="devider"></div>
+         
+          <div class='row'>
+    <div class='col-md-12'>
+      <div class="carousel slide media-carousel" id="media">
+        <div class="carousel-inner">
+          <div class="item  active">
+            <div class="row">
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>          
+              <div class="col-md-3">
+                <a class="l" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>
+              
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>  
+              
+            </div>
+          </div>
+         
+          <div class="item">
+            <div class="row">
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>          
+              <div class="col-md-3">
+                <a class="l" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>
+              
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>  
+              
+            </div>
+          </div>
+         
+          <div class="item">
+            <div class="row">
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>          
+              <div class="col-md-3">
+                <a class="l" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>
+              
+              <div class="col-md-3">
+                <a class="" href="#"><img alt="" src="/images/ad/150x70.png"></a>
+              </div>  
+              
+            </div>
+          </div>
+         
+         
+         
+         </div>
+        <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#media" class="right carousel-control">›</a>
+      </div>                          
+    </div>
+  </div>
+         
+         
          <div class="devider"></div>
 
          
@@ -234,10 +306,7 @@
             
         </div>
         
-         <div class="devider"></div>
-         <a href="#"><img class="img-responsive" src="/images/ad/advertisement.jpg" ></a>
-         
-         <div class="devider"></div>
+        
         </div>
         
 </div>       

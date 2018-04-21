@@ -60,6 +60,7 @@
         <li><a href="/publications">Media & Publications</a></li>
 		<li><a href="/videos/folders">Video Gllery</a></li>
 		<li><a href="/images/folders">Image Gllery</a></li>
+        <li><a href="/register">Register</a></li>
     </ul>
   </nav>
 </div>            </div>

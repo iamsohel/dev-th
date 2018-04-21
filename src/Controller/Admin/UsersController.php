@@ -398,7 +398,8 @@ class UsersController extends AppController
         $advisor = $this->Users->find()->where(['member_category'=>1])->toArray();
         $on_going = $this->Users->find()->where(['member_category'=>2])->toArray();
         $general = $this->Users->find()->where(['member_category'=>3])->toArray();
-        $this->set(compact('advisor','on_going','general'));
+        $cultural = $this->Users->find()->where(['member_category'=>9])->toArray();
+        $this->set(compact('advisor','on_going','general','cultural'));
     }
 
 }

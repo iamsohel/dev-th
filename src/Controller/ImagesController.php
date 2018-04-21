@@ -35,7 +35,7 @@ class ImagesController extends AppController
         $this->add_model(array('Folders'));
         
         $this->paginate = [
-            'limit' => 4,
+            'limit' => 16,
             'order' => [
                 'Folders.created' => 'desc'
             ]
